@@ -1,0 +1,25 @@
+query Quote($documentId: ID!, $status: PublicationStatus) {
+  quote(documentId: $documentId, status: $status) {
+    documentId
+    Author
+    Description
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}
+
+query Quotes(
+  $pagination: PaginationArg
+  $sort: [String]
+  $status: PublicationStatus
+) {
+  quotes(pagination: $pagination, sort: $sort, status: $status) {
+    documentId
+    Author
+    Description
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}

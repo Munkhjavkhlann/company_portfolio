@@ -1,0 +1,43 @@
+query Work($documentId: ID!, $status: PublicationStatus) {
+  work(documentId: $documentId, status: $status) {
+    documentId
+    title
+    handle
+    featuredImage {
+      url
+      documentId
+    }
+    media {
+      url
+      documentId
+    }
+    description
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}
+
+query Works(
+  $pagination: PaginationArg
+  $sort: [String]
+  $status: PublicationStatus
+) {
+  works(pagination: $pagination, sort: $sort, status: $status) {
+    documentId
+    title
+    handle
+    featuredImage {
+      url
+      documentId
+    }
+    media {
+      url
+      documentId
+    }
+    description
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}

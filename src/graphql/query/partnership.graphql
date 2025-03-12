@@ -1,0 +1,37 @@
+query Partnership($documentId: ID!, $status: PublicationStatus) {
+  partnership(documentId: $documentId, status: $status) {
+    documentId
+    featuredImage {
+      documentId
+      url
+    }
+    Name
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}
+
+query Partnerships(
+  $status: PublicationStatus
+  $sort: [String]
+  $pagination: PaginationArg
+  $filters: PartnershipFiltersInput
+) {
+  partnerships(
+    status: $status
+    sort: $sort
+    pagination: $pagination
+    filters: $filters
+  ) {
+    documentId
+    featuredImage {
+      documentId
+      url
+    }
+    Name
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}

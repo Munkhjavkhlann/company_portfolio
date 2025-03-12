@@ -1,0 +1,19 @@
+overwrite: true
+schema: "http://103.50.205.212:1337/graphql"
+# schema: '${ODM_PUBLIC_BASE_PATH}'
+
+documents: "./src/graphql/**/*.graphql"
+
+generates:
+  ./src/generated/index.ts:
+    config:
+      reactApolloVersion: 3
+      withHOC: true
+      withHooks: true
+      maybeValue: T
+    plugins:
+      - add:
+          content: "// @ts-nocheck"
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"

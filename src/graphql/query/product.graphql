@@ -1,0 +1,29 @@
+query Product($documentId: ID!, $status: PublicationStatus) {
+  product(documentId: $documentId, status: $status) {
+    documentId
+    featuredImage {
+      documentId
+      url
+    }
+    Title
+    Description
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}
+
+query Products($status: PublicationStatus, $sort: [String], $pagination: PaginationArg) {
+  products(status: $status, sort: $sort, pagination: $pagination) {
+    documentId
+    featuredImage {
+      documentId
+      url
+    }
+    Title
+    Description
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}

@@ -1,0 +1,33 @@
+query Service($documentId: ID!, $status: PublicationStatus) {
+  service(documentId: $documentId, status: $status) {
+    documentId
+    featuredImage {
+      url
+      documentId
+    }
+    Title
+    Description
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}
+
+query Services(
+  $pagination: PaginationArg
+  $sort: [String]
+  $status: PublicationStatus
+) {
+  services(pagination: $pagination, sort: $sort, status: $status) {
+    documentId
+    featuredImage {
+      url
+      documentId
+    }
+    Title
+    Description
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}
