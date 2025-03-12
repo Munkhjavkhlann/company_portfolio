@@ -9,13 +9,6 @@ const nextConfig: NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  experimental: {
-    turbo: {
-      resolveAlias: {
-        '@tailwindcss/postcss': '@tailwindcss/postcss',
-      },
-    },
-  },
 
   headers: async () => {
     return [
