@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 import * as ApolloReactHoc from '@apollo/client/react/hoc';
@@ -1716,7 +1718,7 @@ export type CreateContactUsMutationFn = Apollo.MutationFunction<CreateContactUsM
 export type CreateContactUsProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
   [key in TDataName]: Apollo.MutationFunction<CreateContactUsMutation, CreateContactUsMutationVariables>
 } & TChildProps;
-export function withCreateContactUs<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withCreateContactUs<TProps extends {} | Exact<{ data: ContactUsInput; }>, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   CreateContactUsMutation,
   CreateContactUsMutationVariables,
@@ -1769,7 +1771,7 @@ export const PartnershipDocument = gql`
 export type PartnershipProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<PartnershipQuery, PartnershipQueryVariables>
 } & TChildProps;
-export function withPartnership<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withPartnership<TProps extends Exact<{ documentId: Scalars["ID"]["input"]; status?: InputMaybe<PublicationStatus>; }>, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   PartnershipQuery,
   PartnershipQueryVariables,
@@ -1836,7 +1838,7 @@ export const PartnershipsDocument = gql`
 export type PartnershipsProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<PartnershipsQuery, PartnershipsQueryVariables>
 } & TChildProps;
-export function withPartnerships<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withPartnerships<TProps extends Exact<{ status?: InputMaybe<PublicationStatus>; sort?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>> | InputMaybe<Scalars["String"]["input"]>>; pagination?: InputMaybe<PaginationArg>; filters?: InputMaybe<PartnershipFiltersInput>; }>, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   PartnershipsQuery,
   PartnershipsQueryVariables,
@@ -1901,7 +1903,7 @@ export const ProductDocument = gql`
 export type ProductProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<ProductQuery, ProductQueryVariables>
 } & TChildProps;
-export function withProduct<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withProduct<TProps extends Exact<{ documentId: Scalars["ID"]["input"]; status?: InputMaybe<PublicationStatus>; }>, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   ProductQuery,
   ProductQueryVariables,
@@ -1964,7 +1966,7 @@ export const ProductsDocument = gql`
 export type ProductsProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<ProductsQuery, ProductsQueryVariables>
 } & TChildProps;
-export function withProducts<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withProducts<TProps extends Exact<{ status?: InputMaybe<PublicationStatus>; sort?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>> | InputMaybe<Scalars["String"]["input"]>>; pagination?: InputMaybe<PaginationArg>; }>, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   ProductsQuery,
   ProductsQueryVariables,
@@ -2024,7 +2026,7 @@ export const QuoteDocument = gql`
 export type QuoteProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<QuoteQuery, QuoteQueryVariables>
 } & TChildProps;
-export function withQuote<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withQuote<TProps extends Exact<{ documentId: Scalars["ID"]["input"]; status?: InputMaybe<PublicationStatus>; }>, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   QuoteQuery,
   QuoteQueryVariables,
@@ -2083,7 +2085,7 @@ export const QuotesDocument = gql`
 export type QuotesProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<QuotesQuery, QuotesQueryVariables>
 } & TChildProps;
-export function withQuotes<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withQuotes<TProps extends Exact<{ pagination?: InputMaybe<PaginationArg>; sort?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>> | InputMaybe<Scalars["String"]["input"]>>; status?: InputMaybe<PublicationStatus>; }>, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   QuotesQuery,
   QuotesQueryVariables,
@@ -2147,7 +2149,7 @@ export const ServiceDocument = gql`
 export type ServiceProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<ServiceQuery, ServiceQueryVariables>
 } & TChildProps;
-export function withService<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withService<TProps extends Exact<{ documentId: Scalars["ID"]["input"]; status?: InputMaybe<PublicationStatus>; }>, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   ServiceQuery,
   ServiceQueryVariables,
@@ -2210,7 +2212,7 @@ export const ServicesDocument = gql`
 export type ServicesProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<ServicesQuery, ServicesQueryVariables>
 } & TChildProps;
-export function withServices<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withServices<TProps extends Exact<{ pagination?: InputMaybe<PaginationArg>; sort?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>> | InputMaybe<Scalars["String"]["input"]>>; status?: InputMaybe<PublicationStatus>; }>, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   ServicesQuery,
   ServicesQueryVariables,
@@ -2279,7 +2281,7 @@ export const WorkDocument = gql`
 export type WorkProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<WorkQuery, WorkQueryVariables>
 } & TChildProps;
-export function withWork<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withWork<TProps extends Exact<{ documentId: Scalars["ID"]["input"]; status?: InputMaybe<PublicationStatus>; }>, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   WorkQuery,
   WorkQueryVariables,
@@ -2347,7 +2349,7 @@ export const WorksDocument = gql`
 export type WorksProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<WorksQuery, WorksQueryVariables>
 } & TChildProps;
-export function withWorks<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+export function withWorks<TProps extends Exact<{ pagination?: InputMaybe<PaginationArg>; sort?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>> | InputMaybe<Scalars["String"]["input"]>>; status?: InputMaybe<PublicationStatus>; }>, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   WorksQuery,
   WorksQueryVariables,
