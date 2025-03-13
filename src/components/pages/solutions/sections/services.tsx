@@ -6,28 +6,28 @@ import { ServiceIcon1, ServiceIcon2, ServiceIcon3, ServiceIcon4 } from "@/assets
 export const Services = () => {
     const servicesData = [
         {
-            icon: <ServiceIcon1 height={48} width={48} color="black" />,
+            icon: <ServiceIcon1 height={32} width={32} color="black" />,
             title: "Cloud Analytics Modernization",
             description:
                 "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click edit text or double click me to add your own content and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you.",
             bgColor: "#fd6262",
         },
         {
-            icon: <ServiceIcon3 height={48} width={48} color="black" />,
+            icon: <ServiceIcon3 height={32} width={32} color="black" />,
             title: "Data Science Acceleration",
             description:
                 "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click edit text or double click me to add your own content and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you.",
             bgColor: "#889ce7",
         },
         {
-            icon: <ServiceIcon2 height={48} width={48} color="black" />,
+            icon: <ServiceIcon2 height={32} width={32} color="black" />,
             title: "Versatility in Application",
             description:
                 "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click edit text or double click me to add your own content and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you.",
             bgColor: "#fd6262",
         },
         {
-            icon: <ServiceIcon4 height={48} width={48} color="black" />,
+            icon: <ServiceIcon4 height={32} width={32} color="black" />,
             title: "Full Customer Experience Service",
             description:
                 "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click edit text or double click me to add your own content and make changes to the font. I'm a great place for you to tell a story and let your users know a little more about you.",
@@ -82,7 +82,7 @@ export const Services = () => {
     };
 
     return (
-        <section className="w-full relative flex h-max bg-[#141416] justify-center px-16 items-center">
+        <section className="w-full relative flex h-max bg-[#141416] justify-center px-4 md:px-8 lg:px-16 items-center">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -94,32 +94,32 @@ export const Services = () => {
                     <motion.div
                         key={index}
                         variants={itemVariants}
-                        className="flex-1 flex border-[1px] border-[#3F4349] bg-[#141416]"
+                        className="flex-1 flex flex-col md:flex-row border-[1px] border-[#3F4349] bg-[#141416]"
                     >
-                        <div className="w-[20%] bg-[#141416] border-r-[1px] border-[#3F4349] flex flex-col items-center justify-center overflow-hidden">
+                        <div className="w-full md:w-[20%] bg-[#141416] border-b-[1px] md:border-b-0 md:border-r-[1px] border-[#3F4349] flex flex-col items-center justify-center overflow-hidden min-h-[20vh] md:min-h-0">
                             <motion.div
                                 variants={iconVariant}
-                                className="relative flex flex-col items-center justify-center p-2"
+                                className="relative flex flex-col items-center justify-center p-2 md:p-4"
                             >
                                 <div
-                                    className="absolute w-24 h-24 rounded-lg"
+                                    className="absolute w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-lg"
                                     style={{ backgroundColor: service.bgColor }}
                                 />
                                 <div className="relative z-10">
                                     {service.icon}
                                 </div>
-                                <div className="w-12 h-[3px] bg-black rounded-lg z-[100] mt-2" />
+                                <div className="w-8 md:w-10 lg:w-12 h-[2px] md:h-[3px] bg-black rounded-lg z-[100] mt-1 md:mt-2" />
                             </motion.div>
                         </div>
 
-                        <div className="w-[80%] bg-[#141416] flex flex-col justify-center p-12 text-white">
+                        <div className="w-full md:w-[80%] bg-[#141416] flex flex-col justify-center p-6 md:p-8 lg:p-12 text-white">
                             <motion.div
                                 initial="hidden"
                                 animate="visible"
                                 variants={textVariant}
                             >
-                                <h3 className="text-[18px] font-normal">{service.title}</h3>
-                                <p className="text-[#8a8a8a] font-extralight text-[16px] w-[50%] mt-2">
+                                <h3 className="text-[16px] md:text-[18px] font-normal">{service.title}</h3>
+                                <p className="text-[#8a8a8a] font-extralight text-[12px] md:text-[14px] lg:text-[16px] w-full md:w-[70%] lg:w-[50%] mt-2">
                                     {service.description}
                                 </p>
                             </motion.div>

@@ -2,9 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { Button } from "@/components/ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,12 +41,11 @@ export const Reliability = () => {
     };
 
     return (
-        <section className="w-full relative flex pt-12 h-[800px] bg-[#141416] justify-center px-16 items-center">
-            <div className="w-full max-w-full h-full border-[1px] border-[#3F4349] flex">
-
+        <section className="w-full relative flex flex-col md:flex-row h-auto md:h-[80vh] bg-[#141416] justify-center px-4 md:px-8 lg:px-16 items-center pt-20">
+            <div className="w-full max-w-full h-full border border-[1px] border-[#3F4349] flex flex-col md:flex-row">
                 <div
                     ref={leftSectionRef}
-                    className="w-[50%] bg-[#1B1C1E] border-r-[1px] border-[#3F4349] relative flex flex-col items-center justify-center overflow-hidden"
+                    className="w-full md:w-[50%] bg-[#1B1C1E] border-b-[1px] md:border-b-0 md:border-r-[1px] border-[#3F4349] relative flex flex-col items-center justify-center overflow-hidden min-h-[40vh] md:min-h-0"
                 >
                     <div
                         ref={imageRef}
@@ -64,18 +63,18 @@ export const Reliability = () => {
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={textVariants}
-                        className="relative z-20 max-w-[45%]"
+                        className="relative z-20 w-full md:max-w-[45%] px-4 md:px-0 text-center"
                     >
-                        <h1 className="text-white text-[30px] text-center font-extralight">
+                        <h1 className="text-white text-[20px] md:text-[24px] lg:text-[30px] font-extralight">
                             Unprecedented Velocity. Impeccable Reliability.
                         </h1>
                     </motion.div>
                 </div>
 
-                <div className="w-[50%] bg-[#141416] flex flex-col items-center justify-center">
-                    <div className="w-[45%] space-y-8">
+                <div className="w-full md:w-[50%] bg-[#141416] flex flex-col items-center justify-center py-6 md:py-0">
+                    <div className="w-full md:w-[80%] lg:w-[60%] space-y-6 md:space-y-8 px-4 md:px-0">
                         <motion.p
-                            className="text-[#8A8A8A] font-light"
+                            className="text-[#8A8A8A] font-light text-[14px] md:text-[16px] lg:text-base"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -89,7 +88,7 @@ export const Reliability = () => {
                         </motion.p>
 
                         <motion.p
-                            className="text-[#8A8A8A] font-light"
+                            className="text-[#8A8A8A] font-light text-[14px] md:text-[16px] lg:text-base"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}

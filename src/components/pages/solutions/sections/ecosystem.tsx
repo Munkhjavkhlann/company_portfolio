@@ -39,11 +39,11 @@ export const EcoSystem = () => {
     };
 
     return (
-        <section className="w-full relative flex h-[55vh] bg-[#141416] justify-center px-16 items-center z-20">
-            <div className="w-full max-w-full h-full border-t-0 border-[1px] border-[#3F4349] flex">
+        <section className="w-full relative flex flex-col md:flex-row h-auto md:h-[55vh] bg-[#141416] justify-center px-4 md:px-8 lg:px-16 items-center z-20">
+            <div className="w-full max-w-full h-full border-t-0 border-[1px] border-[#3F4349] flex flex-col md:flex-row">
                 <div
                     ref={leftSectionRef}
-                    className="w-[40%] bg-[#141416] border-r-[1px] border-[#3F4349] relative flex flex-col items-center justify-center overflow-hidden"
+                    className="w-full md:w-[40%] bg-[#141416] border-b-[1px] md:border-b-0 md:border-r-[1px] border-[#3F4349] relative flex flex-col items-center justify-center overflow-hidden min-h-[40vh] md:min-h-0"
                 >
                     <div
                         ref={imageRef}
@@ -61,23 +61,23 @@ export const EcoSystem = () => {
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={textVariants}
-                        className="relative z-20 max-w-[45%]"
+                        className="relative z-20 w-full md:max-w-[45%] px-4 md:px-0 text-center"
                     >
-                        <h1 className="text-white text-[30px] text-center font-extralight">
+                        <h1 className="text-white text-[20px] md:text-[24px] lg:text-[30px] font-extralight">
                             We Integrate With <br /> Your Ecosystem
                         </h1>
                     </motion.div>
                 </div>
 
-                <div className="w-[60%] bg-[#141416] flex flex-col items-center justify-center">
+                <div className="w-full md:w-[60%] bg-[#141416] flex flex-col items-center justify-center py-6 md:py-0">
                     <motion.p
-                        className="text-[#8A8A8A] w-[35%] font-light"
+                        className="text-[#8A8A8A] w-full md:w-[80%] lg:w-[35%] font-light text-[14px] md:text-[16px] lg:text-base px-4 md:px-0"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={textVariants}
                     >
-                        I&quot;m a paragraph. Click here to add your own text and edit me.
+                        I’m a paragraph. Click here to add your own text and edit me.
                         It’s easy. Just click “Edit Text” or double click me to add your own
                         content and make changes to the font. Feel free to drag and drop me
                         anywhere you like on your page. I’m a great place for you to tell a

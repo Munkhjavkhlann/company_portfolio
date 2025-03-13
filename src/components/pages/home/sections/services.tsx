@@ -14,7 +14,6 @@ export const Services = () => {
 
     useEffect(() => {
         if (leftSectionRef.current && imageRef.current) {
-
             gsap.to(imageRef.current, {
                 xPercent: -10,
                 ease: "none",
@@ -112,11 +111,11 @@ export const Services = () => {
     ];
 
     return (
-        <section className="w-full relative flex h-[80vh] bg-[#141416] justify-center px-16 items-center">
-            <div className="w-full mt-[-10%] max-w-full h-full border-[1px] border-[#3F4349] flex">
+        <section className="w-full relative flex flex-col md:flex-row h-auto md:h-[80vh] bg-[#141416] justify-center px-4 md:px-8 lg:px-16 items-center">
+            <div className="w-full mt-[-10%] max-w-full h-full border-[1px] border-[#3F4349] flex flex-col md:flex-row">
                 <div
                     ref={leftSectionRef}
-                    className="w-[40%] bg-[#141416] border-r-[1px] border-[#3F4349] relative flex flex-col items-center justify-center overflow-hidden"
+                    className="w-full md:w-[40%] bg-[#141416] border-b-[1px] md:border-b-0 md:border-r-[1px] border-[#3F4349] relative flex flex-col items-center justify-center overflow-hidden"
                 >
                     <div
                         ref={imageRef}
@@ -129,13 +128,13 @@ export const Services = () => {
                         }}
                     ></div>
                     <div className="absolute inset-0 bg-[#141416] opacity-30 z-10"></div>
-                    <div className="relative z-20 max-w-[45%]">
+                    <div className="relative z-20 max-w-[45%] py-6 md:py-0">
                         <motion.h1
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
                             variants={textVariants1}
-                            className="text-white text[#8a8a8a] text-[30px] font-light mb-4"
+                            className="text-white text-[20px] md:text-[24px] lg:text-[30px] font-light mb-4"
                         >
                             Let Your Data Take Your Business to Higher Grounds
                         </motion.h1>
@@ -145,16 +144,16 @@ export const Services = () => {
                             whileInView="visible"
                             viewport={{ once: true }}
                             variants={textVariants1}
-                            className="text-[#8A8A8A] font-light mt-4"
+                            className="text-[#8A8A8A] font-light text-[14px] md:text-[16px] lg:text-base mt-4"
                         >
-                            I&quot;m a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
+                            I’m a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
                         </motion.p>
                     </div>
                 </div>
 
-                <div className="w-[60%] bg-[#141416] relative flex items-center justify-center">
-                    <div className="grid grid-cols-2 gap-4 p-6 relative">
-                        <div className="flex flex-col gap-4 transform -translate-y-24">
+                <div className="w-full md:w-[60%] bg-[#141416] relative flex items-center justify-center">
+                    <div className="w-full md:w-auto flex flex-col md:grid md:grid-cols-2 lg:grid-cols-2 gap-4 p-6">
+                        <div className="flex flex-col gap-4 lg:transform lg:-translate-y-24">
                             {cards.slice(0, 2).map((card, index) => (
                                 <motion.div
                                     key={index}
@@ -162,19 +161,19 @@ export const Services = () => {
                                     whileInView="visible"
                                     viewport={{ once: true }}
                                     variants={containerVariants}
-                                    className="w-54 bg-[#1B1C1E] rounded-lg flex flex-col justify-center py-6 px-4"
+                                    className="w-full md:w-54 bg-[#1B1C1E] rounded-lg flex flex-col justify-center py-6 px-4"
                                 >
                                     <div className="mb-16">
                                         {card.icon}
                                     </div>
-                                    <motion.h3 variants={textVariants} className="text-[#889ce7] text-lg font-light">
+                                    <motion.h3 variants={textVariants} className="text-[#889ce7] text-base md:text-lg font-light">
                                         {Array.from(card.title).map((char, index) => (
                                             <motion.span key={index} variants={characterVariants}>
                                                 {char}
                                             </motion.span>
                                         ))}
                                     </motion.h3>
-                                    <motion.p variants={textVariants} className="text-sm text-[#8a8a8a] mt-4">
+                                    <motion.p variants={textVariants} className="text-[#8a8a8a] text-xs md:text-sm mt-4">
                                         {Array.from(card.content).map((char, index) => (
                                             <motion.span key={index} variants={characterVariants}>
                                                 {char}
@@ -189,7 +188,7 @@ export const Services = () => {
                             ))}
                         </div>
 
-                        <div className="flex flex-col gap-4 transform translate-y-24">
+                        <div className="flex flex-col gap-4 lg:transform lg:translate-y-24">
                             {cards.slice(2, 4).map((card, index) => (
                                 <motion.div
                                     key={index + 2}
@@ -197,19 +196,19 @@ export const Services = () => {
                                     whileInView="visible"
                                     viewport={{ once: true }}
                                     variants={containerVariants}
-                                    className="w-54 bg-[#1B1C1E] rounded-lg flex flex-col justify-center py-6 px-4"
+                                    className="w-full md:w-54 bg-[#1B1C1E] rounded-lg flex flex-col justify-center py-6 px-4"
                                 >
                                     <div className="mb-16">
                                         {card.icon}
                                     </div>
-                                    <motion.h3 variants={textVariants} className="text-[#889ce7] text-lg font-light">
+                                    <motion.h3 variants={textVariants} className="text-[#889ce7] text-base md:text-lg font-light">
                                         {Array.from(card.title).map((char, index) => (
                                             <motion.span key={index} variants={characterVariants}>
                                                 {char}
                                             </motion.span>
                                         ))}
                                     </motion.h3>
-                                    <motion.p variants={textVariants} className="text-[#8a8a8a] text-sm mt-4">
+                                    <motion.p variants={textVariants} className="text-[#8a8a8a] text-xs md:text-sm mt-4">
                                         {Array.from(card.content).map((char, index) => (
                                             <motion.span key={index} variants={characterVariants}>
                                                 {char}

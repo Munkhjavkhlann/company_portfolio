@@ -86,58 +86,58 @@ export const Blogs = () => {
     };
 
     return (
-        <section className="w-full relative flex h-max bg-[#141416] justify-center px-16 py-16">
+        <section className="w-full relative flex h-max bg-[#141416] justify-center px-4 xl:px-16 py-8 sm:py-12 lg:py-16">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="w-full grid mt-[-8rem] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-[-4rem] sm:mt-[-6rem] lg:mt-[-8rem]"
             >
                 {blogsData.map((blog, index) => (
                     <motion.div
                         key={index}
                         variants={itemVariants}
-                        className="flex flex-col bg-[#141416] p-6 border border-[#3F4349]"
+                        className="flex flex-col bg-[#141416] p-4 sm:p-6 border border-[#3F4349] rounded-lg"
                     >
-                        <div className="flex items-center text-[#8a8a8a] text-sm mb-4">
+                        <div className="flex items-center text-[#8a8a8a] text-xs sm:text-sm mb-2 sm:mb-4">
                             <span>{blog.date}</span>
-                            <span className="mx-2">•</span>
+                            <span className="mx-1 sm:mx-2">•</span>
                             <span>{blog.readTime}</span>
                         </div>
 
-                        <div className="flex flex-col h-[200px]">
-                            <h3 className="text-[#FFFFFF] text-[21px] font-light mb-2 line-clamp-2 cursor-pointer hover:text-[#e84a43]">
+                        <div className="flex flex-col h-[160px] sm:h-[200px]">
+                            <h3 className="text-[#FFFFFF] text-[18px] sm:text-[21px] font-light mb-1 sm:mb-2 line-clamp-2 cursor-pointer hover:text-[#e84a43] transition-colors duration-200">
                                 {blog.title}
                             </h3>
 
-                            <p className="text-[#8A8A8A] font-extralight text-[16px] mb-6 line-clamp-3">
+                            <p className="text-[#8A8A8A] w-[50%] md:w-full font-extralight text-[14px] sm:text-[16px] mb-4 sm:mb-6 line-clamp-3 sm:line-clamp-4">
                                 {blog.subtitle}
                             </p>
                         </div>
 
-                        <div className="h-[1px] bg-[#3F4349] w-full mb-6" />
+                        <div className="h-[1px] bg-[#3F4349] w-full mb-4 sm:mb-6" />
 
-                        <div className="flex items-center justify-between text-[#8a8a8a] text-sm">
-                            <div className="flex items-center space-x-4">
+                        <div className="flex items-center justify-between text-[#8a8a8a] text-xs sm:text-sm">
+                            <div className="flex items-center space-x-2 sm:space-x-4">
                                 <div className="flex items-center space-x-1">
-                                    <Icon icon="mdi:eye-outline" className="text-lg" />
+                                    <Icon icon="mdi:eye-outline" className="text-base sm:text-lg" />
                                     <span>1.2k</span>
                                 </div>
                                 <div className="flex items-center space-x-1">
-                                    <Icon icon="mdi:comment-outline" className="text-lg" />
+                                    <Icon icon="mdi:comment-outline" className="text-base sm:text-lg" />
                                     <span>12</span>
                                 </div>
                             </div>
 
                             <div className="flex items-center space-x-1">
-                                <Icon icon="mdi:heart-outline" color="#e84a43" className="text-lg" />
+                                <Icon icon="mdi:heart-outline" color="#e84a43" className="text-base sm:text-lg" />
                                 <span>45</span>
                             </div>
                         </div>
                     </motion.div>
                 ))}
             </motion.div>
-        </section >
+        </section>
     );
 };

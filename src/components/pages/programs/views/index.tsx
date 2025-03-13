@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -17,8 +16,10 @@ export default function ProgramsView() {
     useEffect(() => {
         if (!imageRef.current || !contentRef.current) return;
 
+        // Ensure proper initial state
         gsap.set(contentRef.current, { opacity: 1, y: 0 });
 
+        // Create the pin animation for the background
         const pinTrigger = ScrollTrigger.create({
             trigger: containerRef.current,
             start: "top top",
@@ -32,6 +33,7 @@ export default function ProgramsView() {
             }),
         });
 
+        // Content animation with adjusted trigger points
         const contentAnimation = gsap.from(contentRef.current, {
             y: 100,
             opacity: 0,
@@ -45,17 +47,26 @@ export default function ProgramsView() {
             },
         });
 
+        // Event handler for transitions
         const handleTransitionEnd = () => {
             gsap.to(contentRef.current, { opacity: 1, duration: 0.5 });
         };
+
         document.body.addEventListener("transitionend", handleTransitionEnd);
 
+        // Refresh ScrollTrigger whenever window resizes to handle different breakpoints
+        const handleResize = () => {
+            ScrollTrigger.refresh(true);
+        };
+
+        window.addEventListener("resize", handleResize);
 
         return () => {
             pinTrigger.kill();
             contentAnimation.kill();
             ScrollTrigger.refresh();
             document.body.removeEventListener("transitionend", handleTransitionEnd);
+            window.removeEventListener("resize", handleResize);
         };
     }, []);
 
@@ -73,7 +84,7 @@ export default function ProgramsView() {
                     src="/images/background-3.avif"
                     alt="vision background"
                     fill
-                    sizes="100vw"
+                    sizes="110vw"
                     className="object-cover"
                     priority
                 />
@@ -81,7 +92,10 @@ export default function ProgramsView() {
 
             <div ref={contentRef} className="relative z-10 min-h-screen flex flex-col">
                 <ProgramsTitle />
-                <Programs />
+                <div className="flex-grow flex flex-col">
+                    <Programs />
+                    <div className="bg-[#141416] w-full h-12 md:h-42 lg:h-0"></div>
+                </div>
             </div>
         </div>
     );

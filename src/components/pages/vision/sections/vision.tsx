@@ -25,24 +25,24 @@ export const Vision = () => {
 
     return (
         <motion.section
-            className="h-max px-16 mb-32"
+            className="h-max px-4 md:px-8 lg:px-16 mb-12 md:mb-20 lg:mb-32"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
         >
-            <div className="pt-[17vh]">
+            <div className="pt-[10vh] md:pt-[12vh] lg:pt-[17vh]">
                 <motion.h1
-                    className="text-[80px] w-max font-light mb-4 text-white leading-tight"
+                    className="text-[36px] md:text-[56px] lg:text-[80px] w-full md:w-max font-light mb-4 md:mb-4 lg:mb-4 text-white leading-tight"
                     variants={itemVariants}
                 >
                     Our Mission
                 </motion.h1>
 
                 <motion.p
-                    className="text-[30px] w-[40%] font-extralight mb-8 text-white"
+                    className="text-[18px] md:text-[24px] lg:text-[30px] w-full md:w-2/3 lg:w-[40%] font-extralight mb-6 md:mb-8 lg:mb-8 text-white"
                     variants={itemVariants}
                 >
-                    I&quot;m a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.
+                    I’m a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.
                 </motion.p>
             </div>
         </motion.section>

@@ -49,15 +49,17 @@ export const GetStarted = () => {
     ];
 
     return (
-        <section className="w-full relative flex flex-col h-auto bg-[#141416] justify-center px-16 items-center">
+        <section className="w-full relative flex flex-col h-auto bg-[#141416] justify-center px-4 md:px-8 lg:px-16 items-center">
+            {/* Partners Grid */}
             <div className="w-full max-w-full border-[1px] border-[#3F4349]">
-                <div className="grid grid-cols-5 w-full gap-0">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full gap-0">
                     {partners.map((partner, index) => (
                         <div
                             key={index}
                             className={`
-                                flex items-center justify-center h-[198px] bg-[#141416]
-                                ${index < 4 ? 'border-r-[1px] border-[#3F4349]' : ''}
+                                flex items-center justify-center h-[120px] md:h-[160px] lg:h-[198px] bg-[#141416]
+                                ${index < (partners.length - 1) ? 'border-b-[1px] md:border-b-0 md:border-r-[1px] lg:border-r-[1px] border-[#3F4349]' : ''}
+                                ${index === 1 || index === 3 ? 'border-b-0 md:border-b-[1px]' : ''} // Adjust for mobile stacking
                             `}
                         >
                             <motion.p
@@ -65,7 +67,7 @@ export const GetStarted = () => {
                                 whileInView="visible"
                                 viewport={{ once: true }}
                                 variants={textVariants}
-                                className="text-[#8A8A8A] font-light text-[30px]"
+                                className="text-[#8A8A8A] font-light text-[18px] md:text-[24px] lg:text-[30px]"
                             >
                                 {partner}
                             </motion.p>
@@ -74,10 +76,11 @@ export const GetStarted = () => {
                 </div>
             </div>
 
-            <div className="w-full max-w-full h-[700px] border-t-0 border-[1px] border-[#3F4349] flex">
+            {/* Main Content */}
+            <div className="w-full max-w-full h-auto md:h-[55vh] border-t-0 border-[1px] border-[#3F4349] flex flex-col md:flex-row">
                 <div
                     ref={leftSectionRef}
-                    className="w-[60%] bg-[#1B1C1E] border-r-[1px] border-[#3F4349] relative flex flex-col items-center justify-center overflow-hidden"
+                    className="w-full md:w-[60%] bg-[#1B1C1E] border-b-[1px] md:border-b-0 md:border-r-[1px] border-[#3F4349] relative flex flex-col items-center justify-center overflow-hidden min-h-[40vh] md:min-h-0"
                 >
                     <div
                         ref={imageRef}
@@ -97,24 +100,24 @@ export const GetStarted = () => {
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={textVariants}
-                        className="relative z-20 max-w-[45%] text-center space-y-8"
+                        className="relative z-20 w-full md:max-w-[45%] px-4 md:px-0 text-center space-y-6 md:space-y-8"
                     >
-                        <h1 className="text-white text-[30px] font-extralight">
+                        <h1 className="text-white text-[20px] md:text-[24px] lg:text-[30px] font-extralight">
                             Are You Ready to Accelerate Your Business?
                         </h1>
                     </motion.div>
                 </div>
 
-                <div className="w-[40%] bg-[#141416] flex flex-col items-center justify-center">
-                    <div className="w-[45%] space-y-8">
+                <div className="w-full md:w-[40%] bg-[#141416] flex flex-col items-center justify-center py-6 md:py-0">
+                    <div className="w-full md:w-[80%] lg:w-[45%] px-4 md:px-0 space-y-6 md:space-y-8">
                         <motion.p
-                            className="text-[#8A8A8A] font-light"
+                            className="text-[#8A8A8A] font-light text-[14px] md:text-[16px] lg:text-base"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
                             variants={textVariants}
                         >
-                            I&quot;m a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
+                            I’m a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
                         </motion.p>
 
                         <motion.div

@@ -44,12 +44,24 @@ export const Numbers = () => {
                 },
             });
         }
+
+        // Refresh ScrollTrigger on window resize
+        const handleResize = () => {
+            ScrollTrigger.refresh();
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            ScrollTrigger.getAll().forEach(st => st.kill());
+        };
     }, []);
 
     return (
         <section
             ref={sectionRef}
-            className="w-full relative flex flex-col h-[895px] bg-[#141416] items-center overflow-hidden"
+            className="w-full relative flex flex-col h-[1124px] lg:h-[895px] bg-[#141416] items-center overflow-hidden py-16 md:py-24"
         >
             <div
                 ref={imageRef}
@@ -66,13 +78,13 @@ export const Numbers = () => {
                 className="absolute inset-0 bg-[#141416] opacity-40 z-10"
             ></div>
 
-            <div className="relative z-20 pt-24 w-full flex flex-col justify-center items-center text-center">
+            <div className="relative z-20 w-full flex flex-col justify-center items-center text-center px-4 md:px-8 lg:px-16">
                 <motion.h1
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={itemVariants}
-                    className="text-white text-4xl font-light mb-16"
+                    className="text-white text-2xl sm:text-3xl md:text-4xl font-light mb-8 md:mb-12 lg:mb-16"
                 >
                     We Take Pride in Our Numbers
                 </motion.h1>
@@ -88,22 +100,22 @@ export const Numbers = () => {
                             },
                         },
                     }}
-                    className="flex justify-between items-center w-full max-w-6xl"
+                    className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-4 w-full max-w-6xl"
                 >
                     {stats.map((stat, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="flex flex-col items-center justify-center space-y-4"
+                            className="flex flex-col items-center justify-center space-y-2 md:space-y-4"
                         >
-                            <span className="text-[#be4a4a] text-5xl font-light">{stat.number}</span>
-                            <p className="text-[#8a8a8a] text-sm font-extralight">{stat.label}</p>
+                            <span className="text-[#be4a4a] text-3xl sm:text-4xl md:text-5xl font-light">{stat.number}</span>
+                            <p className="text-[#8a8a8a] text-xs sm:text-sm font-extralight px-2 text-center">{stat.label}</p>
                             <motion.div
                                 initial={{ width: 0 }}
                                 whileInView={{ width: "100%" }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 1, ease: "easeOut" }}
-                                className="h-1 bg-[#3F4349] rounded-full mt-4 shadow-[0_1px_0_rgba(255,255,255,0.1),inset_0_1px_0_rgba(0,0,0,0.25)] w-24"
+                                className="h-1 bg-[#3F4349] rounded-full mt-2 md:mt-4 shadow-[0_1px_0_rgba(255,255,255,0.1),inset_0_1px_0_rgba(0,0,0,0.25)] w-16 sm:w-20 md:w-24"
                             ></motion.div>
                         </motion.div>
                     ))}

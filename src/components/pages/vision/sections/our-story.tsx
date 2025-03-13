@@ -13,7 +13,6 @@ export const OurStory = () => {
 
     useEffect(() => {
         if (leftSectionRef.current && imageRef.current) {
-
             gsap.to(imageRef.current, {
                 xPercent: -10,
                 ease: "none",
@@ -41,54 +40,51 @@ export const OurStory = () => {
     };
 
     return (
-        <section
-            className="w-full relative flex h-[65vh] bg-[#141416] justify-center px-16 items-center"
-        >
-            <div className="w-full mt-[-10%] max-w-full h-full border-[1px] border-[#3F4349] flex">
+        <section className="w-full relative flex flex-col md:flex-row h-auto md:h-[65vh] bg-[#141416] justify-center px-4 md:px-8 lg:px-16 items-center">
+            <div className="w-full mt-[-10%] max-w-full h-full border-[1px] border-[#3F4349] flex flex-col md:flex-row">
                 <div
                     ref={leftSectionRef}
-                    className="w-[40%] bg-[#141416] border-r-[1px] border-[#3F4349] relative flex flex-col items-center justify-center overflow-hidden"
+                    className="w-full md:w-[40%] bg-[#141416] border-b-[1px] md:border-b-0 md:border-r-[1px] border-[#3F4349] relative flex flex-col items-center justify-center overflow-hidden min-h-[40vh] md:min-h-0"
                 >
                     <div
                         ref={imageRef}
                         className="absolute inset-0 w-[150%] h-full z-0"
                         style={{
-                            backgroundImage:
-                                "url(/images/background-4.avif)",
+                            backgroundImage: "url(/images/background-4.avif)",
                             backgroundSize: "cover",
                             backgroundPosition: "center",
                         }}
                     ></div>
                     <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
-                    <div className="relative z-20 max-w-[45%]">
+                    <div className="relative z-20 w-full md:max-w-[45%] px-4 md:px-0 text-center">
                         <motion.h1
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
                             variants={textVariants1}
-                            className="text-white text[#8a8a8a] text-[30px] font-light mb-4"
+                            className="text-white text-[20px] md:text-[24px] lg:text-[30px] font-light mb-4"
                         >
                             Our Story
                         </motion.h1>
                     </div>
                 </div>
 
-                <div className="w-[60%] bg-[#141416] flex flex-col items-center justify-center">
+                <div className="w-full md:w-[60%] bg-[#141416] flex flex-col items-center justify-center py-6 md:py-0">
                     <motion.p
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={textVariants1}
-                        className="text-[#8a8a8a] text-[16px] w-[35%] font-extralight mb-8"
+                        className="text-[#8a8a8a] text-[14px] md:text-[16px] w-full md:w-[80%] xl:w-[35%] font-extralight mb-6 md:mb-8 px-4 md:px-0"
                     >
-                        I&quot;m a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.
+                        I’m a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.
                     </motion.p>
                     <motion.p
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={textVariants1}
-                        className="text-[#8a8a8a] text-[16px] w-[35%] font-extralight"
+                        className="text-[#8a8a8a] text-[14px] md:text-[16px] w-full md:w-[80%] xl:w-[35%] font-extralight px-4 md:px-0"
                     >
                         This is a great space to write a long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.
                     </motion.p>
